@@ -1,0 +1,29 @@
+name: RubyGems
+
+on:
+  push:
+    branches: [master]
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Publish
+        run: |
+          mkdir -p $HOME/.gem
+          printf -- "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $HOME/.gem/credentials
+          chmod 0600 $HOME/.gem/credentials
+          gem build *.gemspec
+          gem push *.gem
+        env:
+          RUBYGEMS_API_KEY: ${{secrets.RUBYGEMS_API_KEY}}

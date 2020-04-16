@@ -1,0 +1,30 @@
+name: Test
+
+on:
+  push:
+    branches: [master]
+
+    # Publish `v1.2.3` tags as releases.
+    tags:
+      - v*
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - name: Set up Ruby 2.6
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: 2.6.x
+
+      - name: Build and test with Rake
+        env:
+          DSV_CLIENT_ID: ${{ secrets.DSV_CLIENT_ID }}
+          DSV_CLIENT_SECRET: ${{ secrets.DSV_CLIENT_SECRET }}
+          DSV_TENANT: ${{ secrets.DSV_TENANT }}
+        run: |
+          gem install bundler
+          bundle install
+          rake spec
