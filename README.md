@@ -1,6 +1,6 @@
 # dsv-sdk-ruby
 
-![Test](https://github.com/thycotic/dsv-sdk-ruby/workflows/Test/badge.svg)
+![Tests](https://github.com/thycotic/dsv-sdk-ruby/workflows/Tests/badge.svg)
 ![Documentation](https://github.com/thycotic/dsv-sdk-ruby/workflows/Documentation/badge.svg)
 ![RubyGems](https://github.com/thycotic/dsv-sdk-ruby/workflows/RubyGems/badge.svg)
 ![GitHub](https://github.com/thycotic/dsv-sdk-ruby/workflows/GitHub/badge.svg)
