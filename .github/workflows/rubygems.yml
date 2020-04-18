@@ -18,8 +18,10 @@ jobs:
       - name: Publish
         run: |
           mkdir -p $HOME/.gem
-          printf -- "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $HOME/.gem/credentials
-          chmod 0600 $HOME/.gem/credentials
+          cf=$HOME/.gem/credentials
+          cp /dev/null $cf
+          chmod 0600 $cf
+          echo -e "---\n:rubygems_api_key: ${RUBYGEMS_API_KEY}\n" > $cf
           gem build *.gemspec
           gem push *.gem
         env:
