@@ -1,11 +1,11 @@
 Gem::Specification.new do |s|
   s.name        = 'dsv-sdk'
-  s.version     = '0.0.4-dev'
+  s.version     = '0.0.4'
   s.date        = '2020-04-08'
   s.summary     = "dsv-sdk"
   s.description = "The Thycotic DevOps Secrets Vault SDK for Ruby"
-  s.authors     = ["John Poulin"]
-  s.email       = 'john.m.poulin@gmail.com'
+  s.authors     = ["John Poulin", "Adam Migus"]
+  s.email       = ['john.m.poulin@gmail.com', 'adam@migus.org']
   s.files       = [
     "lib/vault.rb",
     "lib/vault/vault.rb",
