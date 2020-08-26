@@ -21,10 +21,10 @@ class InvalidMethodTypeException < StandardError; end;
 class UnrecognizedResourceException < StandardError; end;
 
 
-module Vault
-  require_relative 'vault/client'
-  require_relative 'vault/secret'
-  require_relative 'vault/role'
+module DsvSdk
+  require_relative 'dsv_sdk/client'
+  require_relative 'dsv_sdk/secret'
+  require_relative 'dsv_sdk/role'
 
   class Vault
     DEFAULT_URL_TEMPLATE = "https://%s.secretsvaultcloud.%s/v1/%s%s"

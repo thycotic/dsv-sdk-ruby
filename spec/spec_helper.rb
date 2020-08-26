@@ -1,1 +1,1 @@
-require "vault"
+require "dsv_sdk"
