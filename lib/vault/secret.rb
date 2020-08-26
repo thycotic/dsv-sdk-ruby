@@ -1,6 +1,5 @@
-
-# Utilized to fetch secrets from an initialzed +Vault+
-class Vault::Secret
+module Vault
+  class Secret
     SECRETS_RESOURCE = "secrets".freeze
   
     # Fetch secrets from the server
@@ -15,3 +14,4 @@ class Vault::Secret
         @secret = @vault.accessResource("GET", SECRETS_RESOURCE, path, nil)
     end
   end
+end
