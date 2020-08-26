@@ -1,5 +1,5 @@
-require './lib/vault.rb'
-class Vault::Role
+module Vault
+  class Role
     ROLES_RESOURCE = "roles".freeze
   
     # Return the specified role
@@ -14,3 +14,4 @@ class Vault::Role
       role = @vault.accessResource("GET", ROLES_RESOURCE, name, nil)
     end
   end
+end
