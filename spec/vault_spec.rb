@@ -4,7 +4,7 @@ describe Vault do
     context 'configuration' do
         it 'can be passed via initialization' do
             expect { 
-                v = Vault.new({
+                v = Vault::Vault.new({
                     client_id: 'client_id',
                     client_secret: 'client_secret',
                     tenant: 'tenant'
@@ -21,7 +21,7 @@ end
 # todo: These tests are too volatile. Shift to mocks
 describe Vault::Secret do
     before(:each) do 
-        @v = Vault.new()
+        @v = Vault::Vault.new()
     end
 
     context 'fetch' do
@@ -47,7 +47,7 @@ end
 
 describe Vault::Role do
     before(:each) do 
-        @v = Vault.new()
+        @v = Vault::Vault.new()
     end
 
     context 'fetch' do
@@ -72,7 +72,7 @@ end
 
 describe Vault::Client do
     before(:each) do 
-        @v = Vault.new()
+        @v = Vault::Vault.new()
     end
 
     let(:client) { Vault::Client.create(@v, 'test-role') }
