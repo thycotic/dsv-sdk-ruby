@@ -1,1 +1,1 @@
-require 'vault'
+require "vault"
