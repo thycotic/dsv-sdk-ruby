@@ -1,4 +1,4 @@
-module Vault
+module DsvSdk
   class Client
       CLIENTS_RESOURCE = "clients".freeze
     

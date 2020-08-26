@@ -1,4 +1,4 @@
-module Vault
+module DsvSdk
   class Role
     ROLES_RESOURCE = "roles".freeze
   
