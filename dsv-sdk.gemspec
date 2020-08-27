@@ -1,6 +1,6 @@
 Gem::Specification.new do |s|
   s.name        = 'dsv_sdk'
-  s.version     = '0.0.5-dev'
+  s.version     = '0.0.6-dev'
   s.date        = '2020-04-08'
   s.summary     = "dsv_sdk"
   s.description = "The Thycotic DevOps Secrets Vault SDK for Ruby"
