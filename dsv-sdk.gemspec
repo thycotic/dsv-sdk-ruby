@@ -7,10 +7,10 @@ Gem::Specification.new do |s|
   s.authors     = ["John Poulin"]
   s.email       = 'john.m.poulin@gmail.com'
   s.files       = [
-    "lib/dsv_sdk.rb",
-    "lib/dsv_sdk/client.rb",
-    "lib/dsv_sdk/secret.rb",
-    "lib/dsv_sdk/role.rb"
+    "lib/dsv.rb",
+    "lib/dsv/client.rb",
+    "lib/dsv/secret.rb",
+    "lib/dsv/role.rb"
   ]
   s.homepage    =
     'https://github.com/thycotic/dsv-sdk-ruby'

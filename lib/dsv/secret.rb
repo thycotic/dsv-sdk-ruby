@@ -1,4 +1,4 @@
-module DsvSdk
+module Dsv
   class Secret
     SECRETS_RESOURCE = "secrets".freeze
   

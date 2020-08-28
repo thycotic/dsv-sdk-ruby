@@ -1,4 +1,4 @@
-module DsvSdk
+module Dsv
   class Role
     ROLES_RESOURCE = "roles".freeze
   
