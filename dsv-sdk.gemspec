@@ -1,5 +1,5 @@
 Gem::Specification.new do |s|
-  s.name        = 'dsv_sdk'
+  s.name        = 'dsv-sdk'
   s.version     = '0.0.6-dev'
   s.date        = '2020-04-08'
   s.summary     = "dsv_sdk"
