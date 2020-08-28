@@ -1,1 +1,1 @@
-require "dsv_sdk"
+require "dsv"
