@@ -1,4 +1,4 @@
-# dsv_sdk-ruby
+# dsv-sdk-ruby
 
 ![Tests](https://github.com/thycotic/dsv-sdk-ruby/workflows/Tests/badge.svg)
 ![Documentation](https://github.com/thycotic/dsv-sdk-ruby/workflows/Documentation/badge.svg)
@@ -19,12 +19,12 @@ Vault will initialize easily if the following environment variables are defined:
 * `DSV_TLD` - optional
 
 ```ruby
-require 'dsv_sdk'
+require 'dsv'
 # initialize from ENV variables automatically
-vault = DsvSdk::Vault.new
+vault = Dsv::Vault.new
 
 begin
-    secret = DsvSdk::Secret.fetch(vault, "/test/secret")
+    secret = Dsv::Secret.fetch(vault, "/test/secret")
 rescue
     puts "Oh no, we had a problem accessing the vault"
 end
@@ -42,7 +42,7 @@ If you want to manually initialze Vault you will need to pass a `Hash` to the Va
 * `tld` - optional (default's to `.com`)
 
 ```ruby
-require 'vault'
+require 'dsv'
 
 configuration = {
   client_id: 'test_client_id',
@@ -50,10 +50,10 @@ configuration = {
   tenant: 'test_tenant'
 }
 
-v = Vault.new(configuration)
+v = Dsv::Vault.new(configuration)
 
 begin
-    secret = DsvSdk::Secret.fetch(vault, "/test/secret")
+    secret = Dsv::Secret.fetch(vault, "/test/secret")
 rescue
     puts "Oh no, we had a problem accessing the vault"
 end
