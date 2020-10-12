@@ -79,12 +79,12 @@
 <p><code>DSV_TLD</code> - optional</p>
 </li></ul>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>vault</span><span class='tstring_end'>&#39;</span></span>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_require'>require</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>dsv</span><span class='tstring_end'>&#39;</span></span>
 <span class='comment'># initialize from ENV variables automatically
-</span><span class='id identifier rubyid_vault'>vault</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Vault.html" title="Vault (class)">Vault</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Vault.html#initialize-instance_method" title="Vault#initialize (method)">new</a></span></span>
+</span><span class='id identifier rubyid_vault'>vault</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Dsv.html" title="Dsv (module)">Dsv</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Dsv/Vault.html" title="Dsv::Vault (class)">Vault</a></span></span><span class='period'>.</span><span class='id identifier rubyid_new'><span class='object_link'><a href="Dsv/Vault.html#initialize-instance_method" title="Dsv::Vault#initialize (method)">new</a></span></span>
 
 <span class='kw'>begin</span>
-    <span class='id identifier rubyid_secret'>secret</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Vault.html" title="Vault (class)">Vault</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Vault/Secret.html" title="Vault::Secret (class)">Secret</a></span></span><span class='period'>.</span><span class='id identifier rubyid_fetch'><span class='object_link'><a href="Vault/Secret.html#fetch-class_method" title="Vault::Secret.fetch (method)">fetch</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_vault'>vault</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/test/secret</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
+    <span class='id identifier rubyid_secret'>secret</span> <span class='op'>=</span> <span class='const'><span class='object_link'><a href="Dsv.html" title="Dsv (module)">Dsv</a></span></span><span class='op'>::</span><span class='const'><span class='object_link'><a href="Dsv/Secret.html" title="Dsv::Secret (class)">Secret</a></span></span><span class='period'>.</span><span class='id identifier rubyid_fetch'><span class='object_link'><a href="Dsv/Secret.html#fetch-class_method" title="Dsv::Secret.fetch (method)">fetch</a></span></span><span class='lparen'>(</span><span class='id identifier rubyid_vault'>vault</span><span class='comma'>,</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>/test/secret</span><span class='tstring_end'>&quot;</span></span><span class='rparen'>)</span>
 <span class='kw'>rescue</span>
     <span class='id identifier rubyid_puts'>puts</span> <span class='tstring'><span class='tstring_beg'>&quot;</span><span class='tstring_content'>Oh no, we had a problem accessing the vault</span><span class='tstring_end'>&quot;</span></span>
 <span class='kw'>end</span>
@@ -96,7 +96,7 @@
 
 <p>If you want to manually initialze Vault you will need to pass a <code>Hash</code> to the Vault initialization with the following params: “ * <code>client_id</code> * <code>client_secret</code> * <code>tenant</code> * <code>tld</code> - optional (default&#39;s to <code>.com</code>)</p>
 
-<pre class="code ruby"><code class="ruby">require &#39;vault&#39;
+<pre class="code ruby"><code class="ruby">require &#39;dsv&#39;
 
 configuration = {
   client_id: &#39;test_client_id&#39;,
@@ -104,10 +104,10 @@ configuration = {
   tenant: &#39;test_tenant&#39;
 }
 
-v = Vault.new(configuration)
+v = Dsv::Vault.new(configuration)
 
 begin
-    secret = Vault::Secret.fetch(vault, &quot;/test/secret&quot;)
+    secret = Dsv::Secret.fetch(vault, &quot;/test/secret&quot;)
 rescue
     puts &quot;Oh no, we had a problem accessing the vault&quot;
 end
@@ -117,7 +117,7 @@ puts &quot;The password is: #{secret[&quot;data&quot;][&quot;password&quot;]}&qu
 </div></div>
 
       <div id="footer">
-  Generated on Fri Aug 28 01:50:40 2020 by
+  Generated on Mon Oct 12 15:26:23 2020 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.9.24 (ruby-2.6.6).
 </div>
